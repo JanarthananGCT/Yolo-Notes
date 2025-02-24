@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Yolo Notes",
+  "version": "1.0",
+  "description": "Create, edit, and delete notes for specific websites.",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon_16.png",
+      "48": "assets/icons/icon_48.png",
+      "128": "assets/icons/icon_128.png"
+    }
+  },
+  "chrome_url_overrides": {
+    "newtab": "dashboard/dashboard.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/icons/*",
+        "js/storage.js",
+        "js/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
